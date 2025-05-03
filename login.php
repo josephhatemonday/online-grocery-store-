@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["user_id"] = $row['user_id'];
                 $_SESSION["role"] = $row['role'];
                 header("Location: dashboard.php");
+                logAction($conn, $_SESSION['user_id'], "Logged in");
                 exit();
             } else {
                 $error = "Invalid password.";

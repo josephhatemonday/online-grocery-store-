@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_role = $_POST['role'];
 
     $stmt = $conn->prepare("UPDATE Users SET role = ? WHERE user_id = ?");
+    logAction($conn, $_SESSION['user_id'], "Changed role of user ID $user_id to $new_role");
     $stmt->bind_param("si", $new_role, $user_id);
     $stmt->execute();
 }
