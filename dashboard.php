@@ -24,6 +24,7 @@ echo "<img src='uploads/" . $user['profile_picture'] . "' width='100' height='10
     <h2>Welcome, <?php echo $user['name']; ?>!</h2>
     <nav>
         <a href="library.php">Library</a> |
+        <a href="shop.php">Shop</a> |
         <a href="changepassword.php">Change Password</a> |
         <a href="update_profile.php">Change Profile</a> |
         <?php if (isAdmin()): ?>
